@@ -9,3 +9,4 @@ public interface ClienteService {
 	public abstract List<Cliente> listaPorDni(String dni);
 	public abstract List<Cliente> listaPorNombre(String nombre);
 }
+

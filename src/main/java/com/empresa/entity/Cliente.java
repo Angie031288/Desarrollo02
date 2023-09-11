@@ -23,7 +23,7 @@ public class Cliente {
 	private String nombre;
 	private String dni;
 	private Date fechaRegistro;
-	private int estado;
+	private String estado;
 	
 	@ManyToOne
 	@JoinColumn(name = "idCategoria")

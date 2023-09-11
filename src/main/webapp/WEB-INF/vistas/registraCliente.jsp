@@ -15,7 +15,7 @@
 <body>
 
 <div class="container">
-<h3>Registra Modalidad</h3>
+<h3>Registra Cliente</h3>
 	
 	<form  id="id_form" method="post"> 
 	 <div class="col-md-12" style="margin-top: 2%">
@@ -26,9 +26,22 @@
 				</div>
 				<div class="form-group col-md-3">
 					<label class="control-label" for="id_dni">DNI</label>
-					<input class="form-control" id="id_dni" name="dni" placeholder="Ingrese el número de dni" type="text" maxlength="8"/>
+					<input class="form-control" id="id_dni" name="dni" placeholder="Ingrese el numero de dni" type="text" maxlength="8"/>
 				</div>
 			</div>
+			
+			<div class="form-group col-sm-6">
+		                                        <label class="col-lg-3 control-label" for="id_estado">Estado</label>
+		                                      
+		                                        <div class="col-lg-8">
+													<select class="form-control" id="id_estado" name="estado">
+														<option value=" ">[Seleccione]</option>
+														<option value="Activo">Activo</option>
+														<option value="Inactivo">Inactivo</option>
+													</select>
+		                                        </div>
+		                                    </div>
+			
 			<div class="row">
 				<div class="form-group col-md-3">
 					<label class="control-label" for="id_categoria">Categoria</label>
@@ -36,7 +49,7 @@
 						<option value=" ">[Seleccione]</option>    
 					</select>
 			    </div>
-				
+		
 		    </div>
 		    <div class="row">
 				<div class="form-group col-md-12" align="center">
@@ -125,11 +138,20 @@ $('#id_form').bootstrapValidator({
             }
         },
         
+        estado: {
+    		selector : '#id_estado',
+            validators: {
+            	notEmpty: {
+                    message: 'Estado es un campo obligatorio'
+                },
+            }
+        },
+        
         categoria: {
     		selector : '#id_categoria',
             validators: {
             	notEmpty: {
-                    message: 'Categoría es un campo obligatorio'
+                    message: 'Categoria es un campo obligatorio'
                 },
             }
         },

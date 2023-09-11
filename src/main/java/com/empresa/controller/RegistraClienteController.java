@@ -39,7 +39,7 @@ public class RegistraClienteController {
 	public Map<?, ?> registra(Cliente obj) {
 		HashMap<String, String> map = new HashMap<String, String>();
 		obj.setFechaRegistro(new Date());
-		obj.setEstado(1);
+		obj.setEstado(null);
 		Cliente objSalida = clienteService.insertaCliente(obj);
 		if (objSalida == null) {
 			map.put("MENSAJE", "Error en el registro");
